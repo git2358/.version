@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>.version</title>
+<script>
+const d=new Date(),s=String(d.getFullYear()+d.getMonth()+1+d.getDate()+d.getHours()+d.getMinutes()+d.getSeconds()+d.getMilliseconds()),id=crypto.randomUUID().replaceAll('-',''),v=(s+id).slice(0,32);
+document.write('<link rel="stylesheet" href="style.css?v='+v+'">');
+</script>
+</head>
+<body>
+<div class="box white f1 code"><span>.version</span></div>
+
+<div class="version-left"></div>
+<div class="version"></div>
+<div class="version-right"></div>
+
+<script>
+document.querySelector('.version-left').textContent=v;
+document.querySelector('.version').textContent=v;
+document.querySelector('.version-right').textContent=v;
+document.write('<script src="script.js?v='+v+'"><\/script>');
+</script>
+</body>
+</html>

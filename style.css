@@ -1,0 +1,59 @@
+@import url("https://git2358.github.io/TE/css/tachyons.min.css");
+.box { 
+display: block;
+height: 200vh;
+width: 100vw;
+background: url("https://picsum.photos/1440") center / cover no-repeat;
+text-align: center;
+padding:7em 0;
+}
+.box span {
+  color: #fff;
+  mix-blend-mode: difference;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+body {
+  position: relative;
+}
+
+.version,
+.version-right,
+.version-left {
+  position: absolute;
+  bottom: 10px;
+  font-family: monospace;
+  font-size: .5rem;
+  color: #fff;
+  mix-blend-mode: difference;
+  z-index: 9999;
+  pointer-events: none;
+  isolation: auto;
+}
+
+.version {
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.version-right {
+  right: 12px;
+  text-align: right;
+}
+
+.version-left {
+  left: 12px;
+  text-align: left;
+}
+
+@media (min-width: 768px) {
+  .version,
+  .version-right,
+  .version-left {
+    position: fixed;
+  }
+}
