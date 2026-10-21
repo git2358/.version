@@ -16,7 +16,7 @@ async function getVersion() {
   }));
   const source = contents.join('\n\n');
   const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(source));
-  const version = Array.from(new Uint8Array(digest), byte => byte.toString(16).padStart(2, '0')).join('').slice(0, 32);
+  const version = Array.from(new Uint8Array(digest), byte => byte.toString(16).padStart(2, '0')).join('').slice(0, 16);
   document.querySelectorAll('.version, .version-left, .version-right').forEach(el => {
     el.textContent = version;
   });
